@@ -9,7 +9,7 @@ pipeline {
             }  
 
         }
-        //deploy to render
+        //deploy to render cloud
         stage('Deploy to Render'){
             steps{
                withCredentials([usernameColonPassword(credentialsId: 'renderid', variable: 'PASS')]) {
