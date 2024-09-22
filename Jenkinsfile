@@ -9,6 +9,14 @@ pipeline {
             }  
 
         }
+
+        //test
+        stage ('Test') {
+            steps {
+                sh 'npm test'
+            }
+
+        }
         //deploy to render cloud
         stage('Deploy to Render'){
             steps{
