@@ -12,10 +12,10 @@ pipeline {
         //deploy to render cloud
         stage('Deploy to Render'){
             steps{
-               withCredentials([usernameColonPassword(credentialsId: 'render-deploy-hook', variable: 'RENDER_DEPLOY_HOOK')]) {
+               withCredentials([usernameColonPassword(credentialsId: 'render-deploy-hook', variable: 'PASS')]) {
                     
                     sh '''
-                        curl -X POST ${RENDER_DEPLOY_HOOK} -vvv
+                        curl -X POST ${PASS} -vvv
                     '''
                     } 
             }
