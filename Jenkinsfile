@@ -6,8 +6,7 @@ pipeline {
             steps {
                 sh 'npm install'
 
-            }
-          
+            }  
 
         }
         //deploy to render
@@ -15,10 +14,11 @@ pipeline {
             steps{
                withCredentials([usernameColonPassword(credentialsId: 'renderid', variable: 'PASS')]) {
                     
-                    sh 'curl https://api.render.com/deploy/${PASS}' } 
+                    sh 'curl ${PASS} -vvv' } 
             }
         }
 
+   
           
     }
     
