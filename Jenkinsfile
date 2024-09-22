@@ -11,11 +11,14 @@ pipeline {
 
         }
         //deploy
-        stage ('Deploy')
-            steps {
+        stage ('Deploy') {
+              steps {
                 sh 'npm run start'
             }
 
+
+        }
+          
     }
     
 }
