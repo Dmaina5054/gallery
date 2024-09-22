@@ -14,7 +14,7 @@ const app = express();
 // connecting the database
 
 const MONGODB_URI = process.env.MONGODB_URI || config.mongoURI[app.settings.env]
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
+mongoose.connect(config.mongoURI.test, { useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
     if (err) {
         console.log(err)
     }else{
