@@ -15,7 +15,7 @@ pipeline {
                withCredentials([usernameColonPassword(credentialsId: 'render-deploy-hook', variable: 'PASS')]) {
                     
                     sh '''
-                        curl -X POST ${PASS} -vvv
+                        curl -X POST https://api.render.com/deploy/srv-crnb8ed6l47c73acpgd0?key=${PASS} -vvv
                     '''
                     } 
             }
