@@ -15,7 +15,7 @@ pipeline {
                withCredentials([usernameColonPassword(credentialsId: 'render-deploy-hook', variable: 'RENDER_DEPLOY_HOOK')]) {
                     
                     sh '''
-                        curl -X POST $RENDER_DEPLOY_HOOK -vvv
+                        curl -X POST ${RENDER_DEPLOY_HOOK} -vvv
                     '''
                     } 
             }
