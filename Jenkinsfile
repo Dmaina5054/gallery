@@ -10,7 +10,7 @@ pipeline {
 
         }
 
-        //test
+        //test code
         stage ('Test') {
             steps {
                 sh 'npm test'
@@ -28,8 +28,6 @@ pipeline {
                     } 
             }
         }
-
-   
           
     }
     
