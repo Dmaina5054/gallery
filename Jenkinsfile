@@ -20,11 +20,13 @@ pipeline {
         //deploy to render cloud
         stage('Deploy to Render'){
             steps{
+               withCredentials([string(credentialsId: 'render_deploy_url', variable: 'SECRET')]) {
                     
                     sh '''
-                        curl -X POST https://api.render.com/deploy/srv-crnb8ed6l47c73acpgd0?key=Z1Gmn2hWrv8
+                        curl -X POST ${SECRET} -vvv
                     '''
                     } 
+            }
         }
 
    
